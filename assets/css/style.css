@@ -1,0 +1,18 @@
+html{
+	  max-width: 1150px;
+}
+
+body {
+    background-image: url("../images/buffalohoth.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+img{
+	max-width: 55px;
+}
+
+.thumbnail{
+	width: 250px;
+	background-color: white;
+}
