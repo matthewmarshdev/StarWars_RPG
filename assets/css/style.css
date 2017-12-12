@@ -8,11 +8,19 @@ body {
     width: 100%;
 }
 
+h1{
+	text-align: center;
+}
 img{
-	max-width: 55px;
+	max-width: 100px;
 }
 
 .thumbnail{
 	width: 250px;
 	background-color: white;
+}
+
+#startbutton{
+	align-content: center;
+	margin-top: 15px;
 }
