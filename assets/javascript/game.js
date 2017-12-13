@@ -10,19 +10,42 @@
    	-maybe add a bleed function on the characters that uses setInterval(function, time**/
 
 
-var player = {
-    health = 100,
+var ewok = {
+    health = 85,
+    maxPower = 30,
+
+};
+
+var jarjar = {
+    health = 60,
+    maxPower = 30,
+
+};
+
+var chewyandporg = {
+    health = 115,
     maxPower = 20,
 
 };
 
-var opponent = {
-    health: 100,
-    maxPower: 20,
+var reddit = {
+    health = 40,
+    maxPower = 45,
 
 };
 
+//array of player objects  
+var playerList = [ewok, jarjar, chewyandporg, reddit];
 
+//this method needs work, will essentially set the player and opponent variables based on button
+//clicks
+
+function selectPlayer(){
+	var selectedPlayer = playerList.indexof[$('choose me')]
+	var selectedOpponent =
+}
+
+//attack function, connected to attack button, hidden until players are selected
 function attack() {
 
     var attackButton = getelementid(attack button);
@@ -44,12 +67,14 @@ function attack() {
     }, 1000);
 }
 
+//fuction determines what the attack will land for 
 var determineAttack = (maxPower) => {
     return Math.floor(Math.random() * maxPower);
 
 }
 
-function winGame(health)
+//determines if the game is over or not
+function gameOver(health)
 if (player.health === 0 && opponent.health >= 0) {
     get elementbyid innerhtml.show YOU DIED!;
     attackButton.hidden = true;
@@ -62,13 +87,16 @@ if (player.health === 0 && opponent.health >= 0) {
     return;
 }
 
+//restart function for the game 
 function restart(){
 	var attackButton = document.getelementbyid('attack-button');
-	
-	player.health = 100;
-	opponent.health = 100;
+
+	ewok.health = 85;
+	jarjar.health = 60;
+	chewyandporg.health = 115;
+	reddit.health = 40;
 	attackButton.diabled = false;
-	attackButton. hidden = false;
+	attackButton.hidden = false;
 	document.getelementbyid('restart-button').hidden = true;
 	printToScreen
 }

@@ -19,7 +19,7 @@
 <div class="container ">
 <div class="jumbotron text-center " style="background-color: black; ">
   <h1 style="font-family: 'Bungee', cursive; color: gold; font-size: 45px; ">Star Wars: Battlefront 3!</h1>
-  <p style="text-align: center; font-family: 'Inconsolata', monospace; color: gold; ">Somehow this game still has more integrity than 2....</p>
+  <p style="text-align: center; font-family: 'Inconsolata', monospace; color: gold; ">Somehow this game still has more integrity than 2....</p><br><br>
   <button class="btn btn-lrg btn-danger" id="'restart-button" onclick="restart()">Restart Game</button>
 </div>
 </div>
@@ -28,50 +28,54 @@
 
 <div class="container">
 	<div class="row">
-		<h1 class="text-center" style="font-family:'Bungee', cursive; color: gold; font-size: 30px; background-color: black;">Choose Your Character!</h1> 
+		<div class="col-lg-12 text-center">
+		     <h1 class="text-center" style="font-family:'Bungee', cursive; color: gold; font-size: 30px; background-color: black;">Choose Your Character!</h1> 
+		</div>
 	</div>	
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card" style="width: 15rem; height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
+    <div class="row" id="playercards">
+        <div class="col-lg-3 col-md-6">
+            <div class="card" id="ewok" style="width: 15rem; height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
                 <img class="card-img-top" src="assets/images/ewok.jpg" alt="ewok">
                 <div class="card-block">
                     <h4 class="card-title">EWOK</h4>
                     <p class="card-text">The fearsome EWOK.</p>
-                    <a href="#" class="btn btn-primary" style="position: relative;">Choose Me</a>
-                    <a href="#" class="btn btn-danger" style="position: relative;">Fight Me</a>
+                    <a id="chooseewok" class="btn btn-primary" style="position: relative;">Choose Me</a>
+                    <a id="fightewok" class="btn btn-danger" style="position: relative;">Fight Me</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card text-center" style="width: 15rem; height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
+        <div class="col-lg-3 col-md-6">
+            <div class="card" id="jarjar" style="width: 15rem; height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
+            	<div class="image-area">
                 <img class="card-img-top rounded" src="assets/images/jarjar.jpg" alt="JAR JAR">
+            	</div>
                 <div class="card-block align-bottom">
                     <h4 class="card-title">JAR JAR</h4>
                     <p class="card-text">Super-Tough JAR JAR</p>
-                    <a href="" class="btn btn-primary align-bottom">Choose Me</a>
-                    <a href="" class="btn btn-danger align-bottom" >Fight Me</a>
+                    <a id="choosejarjar" class="btn btn-primary align-bottom">Choose Me</a>
+                    <a id="fightjarjar" class="btn btn-danger align-bottom" >Fight Me</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 15rem;height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
+        <div class="col-lg-3 col-md-6">
+            <div class="card" id="chewyandporg" style="width: 15rem;height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
                 <img class="card-img-top" src="assets/images/chewyandporg.jpg" alt="PORG AND CHEWY">
                 <div class="card-block">
                     <h4 class="card-title">PORG AND CHEWY</h4>
                     <p class="card-text">PORG AND CHEWY TAG TEAM</p>
-                    <a href="#" class="btn btn-primary" style="position: relative;">Choose Me</a>
-                    <a href="#" class="btn btn-danger" style="position: relative;">Fight Me</a>
+                    <a id="choosechewyandporg" class="btn btn-primary" style="position: relative;">Choose Me</a>
+                    <a id="fightchewyandporg" class="btn btn-danger" style="position: relative;">Fight Me</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-3">
-            <div class="card" style="width: 15rem; height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
+        <div class="col-lg-3 col-md-6">
+            <div class="card" id="reddit" style="width: 15rem; height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
                 <img class="card-img-top" src="assets/images/Reddit-PNG-Picture.png" alt="reddit">
                 <div class="card-block">
                     <h4 class="card-title">r/Gaming </h4>
                     <p class="card-text">Troll Community of r/gaming</p>
-                    <a href="#" class="btn btn-primary" style="position: relative;">Choose Me</a>
-                    <a href="#" class="btn btn-danger" style="position: relative;">Fight Me</a>
+                    <a id="choosereddit" class="btn btn-primary" style="position: relative;">Choose Me</a>
+                    <a href="fightreddit" class="btn btn-danger" style="position: relative;">Fight Me</a>
                 </div>
             </div>
         </div>
@@ -88,8 +92,6 @@
 		</div>
 	</div>
 </div>
-
-<button class="btn btn-lrg btn-danger" id="'restart-button" onclick="restart()">Restart Game</button>
 
 
 </body>
