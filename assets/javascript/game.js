@@ -38,20 +38,33 @@ var reddit = {
 var playerList = [ewok, jarjar, chewyandporg, reddit];
 
 //this method needs work, will essentially set the player and opponent variables based on button
-//clicks
+//clicks i will use the .appendto $('.divC').appendTo('.divB'); to do so 
 
 function selectPlayer(){
-	var selectedPlayer = playerList.indexof[$('choose me')]
-	var selectedOpponent =
+	var pickedEwok = $('#chooseewok');
+	var fightEwok = $('#fightewok');
+	var pickedJarJar = $('#choosejarjar');
+	var fightJarJar = $('#fightjarjar');
+	var pickedChewyAndPorg = $('#choosechewyandporg');
+	var fightChewyAndPorg = $('#fightchewyandporg');
+	var pickedReddit = $('#choosereddit');
+	var fightReddit = $('#fightreddit');
+
+	$('#chooseewok, #fightewok, #choosejarjar, #fightjarjar, #choosechewyandporg, #fightchewyandporg, #choosereddit, #fightreddit').click(function (){
+		if (this.id == 'chooseewok'){
+			pickedEwok.hide()
+			
+		}
+	}
 }
 
 //attack function, connected to attack button, hidden until players are selected
 function attack() {
 
-    var attackButton = getelementid(attack button);
-    var gameMessage = getelementbyid(game message html);
-    var restartButton = getelementbyid(restart button);
-    var playerattack = determineAttack(player.power);
+    var attackButton = $('attack-button');
+    var gameMessage = $('message');
+    var restartButton = $('restart-button');
+    
 
     opponent.health -= player.maxPower;
     console.log()
@@ -74,30 +87,33 @@ var determineAttack = (maxPower) => {
 }
 
 //determines if the game is over or not
-function gameOver(health)
-if (player.health === 0 && opponent.health >= 0) {
-    get elementbyid innerhtml.show YOU DIED!;
-    attackButton.hidden = true;
-    restartButton.hidden = false;
-    return;
-} else {
-    get elementbyid innerhtml.show YOU WIN!;
-    attackButton.hidden = true;
-    restartButton.hidden = false;
-    return;
+function gameOver(health){
+	if (player.health === 0 && opponent.health >= 0) {
+	    $('#winorlose').html.show('YOU DIED!') ;
+	    attackButton.hidden = true;
+	    restartButton.hidden = false;
+	    return;
+	} else {
+	    $('#winorlose').html.show('YOU WIN!') ;
+	    attackButton.hidden = true;
+	    restartButton.hidden = false;
+	    return;
+	}
+	restart();
 }
 
 //restart function for the game 
 function restart(){
-	var attackButton = document.getelementbyid('attack-button');
+	var attackButton = $('#attack-button');
 
 	ewok.health = 85;
 	jarjar.health = 60;
 	chewyandporg.health = 115;
 	reddit.health = 40;
-	attackButton.diabled = false;
+	attackButton.disabled = false;
 	attackButton.hidden = false;
-	document.getelementbyid('restart-button').hidden = true;
+	$('#restart-button').hidden = true;
+	$('#the-arena').empty();
 	printToScreen
 }
 

@@ -20,7 +20,9 @@
 <div class="jumbotron text-center " style="background-color: black; ">
   <h1 style="font-family: 'Bungee', cursive; color: gold; font-size: 45px; ">Star Wars: Battlefront 3!</h1>
   <p style="text-align: center; font-family: 'Inconsolata', monospace; color: gold; ">Somehow this game still has more integrity than 2....</p><br><br>
-  <button class="btn btn-lrg btn-danger" id="'restart-button" onclick="restart()">Restart Game</button>
+  <button class="btn btn-lrg btn-danger" id="restart-button" onclick="restart()">Restart Game</button>
+  <div id="winorlose"></div>
+  <div id="message"></div>
 </div>
 </div>
 
@@ -80,10 +82,18 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="container" id="the-arena">
+	<br><br><br>
+	
 	<div class="row">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-3">
+		    <button class="btn btn-lg btn-success center-block">Attack!</button>
+	    </div>
+	</div>
+
+
+	<div class="row" id="the-arena">
 		<div class="col-sm-12 col-md-6">
 			<div id="Chosen Player"></div>
 		</div>
@@ -91,8 +101,8 @@
 			<div id="Chosen Opponenet"></div>
 		</div>
 	</div>
-</div>
 
+</div>
 
 </body>
 </html>
