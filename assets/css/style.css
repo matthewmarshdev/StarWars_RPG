@@ -13,7 +13,12 @@ h1{
 	text-align: center;
 }
 img{
-	max-width: 100px;
+	max-height: 100px;
+	max-width:  100px;
+}
+
+.card-block{
+	margin-top: 30px;
 }
 
 .thumbnail{
@@ -24,4 +29,9 @@ img{
 #startbutton{
 	align-content: center;
 	margin-top: 15px;
+}
+
+#thearena{
+	background-color: red;
+	height: 300px;
 }

@@ -20,7 +20,7 @@
 <div class="jumbotron text-center " style="background-color: black; ">
   <h1 style="font-family: 'Bungee', cursive; color: gold; font-size: 45px; ">Star Wars: Battlefront 3!</h1>
   <p style="text-align: center; font-family: 'Inconsolata', monospace; color: gold; ">Somehow this game still has more integrity than 2....</p>
-  <p><a class="btn btn-warning btn-lg text-center" id="start-button" href="# " role="button ">Start Game</a></p>
+  <button class="btn btn-lrg btn-danger" id="'restart-button" onclick="restart()">Restart Game</button>
 </div>
 </div>
 
@@ -28,7 +28,7 @@
 
 <div class="container">
 	<div class="row">
-		<h1 class="text-center" style="font-family: 'Bungee', cursive; color: blue; font-size: 30px; ">Choose Your Character!</h1> 
+		<h1 class="text-center" style="font-family:'Bungee', cursive; color: gold; font-size: 30px; background-color: black;">Choose Your Character!</h1> 
 	</div>	
     <div class="row">
         <div class="col-md-3">
@@ -43,13 +43,13 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="card" style="width: 15rem; height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
-                <img class="card-img-top" src="assets/images/jarjar.jpg" alt="JAR JAR">
-                <div class="card-block">
+            <div class="card text-center" style="width: 15rem; height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
+                <img class="card-img-top rounded" src="assets/images/jarjar.jpg" alt="JAR JAR">
+                <div class="card-block align-bottom">
                     <h4 class="card-title">JAR JAR</h4>
                     <p class="card-text">Super-Tough JAR JAR</p>
-                    <a href="#" class="btn btn-primary" style="position: relative;">Choose Me</a>
-                    <a href="#" class="btn btn-danger" style="position: relative;">Fight Me</a>
+                    <a href="" class="btn btn-primary align-bottom">Choose Me</a>
+                    <a href="" class="btn btn-danger align-bottom" >Fight Me</a>
                 </div>
             </div>
         </div>
@@ -78,7 +78,18 @@
     </div>
 </div>
 
+<div class="container" id="the-arena">
+	<div class="row">
+		<div class="col-sm-12 col-md-6">
+			<div id="Chosen Player"></div>
+		</div>
+		<div class="col-sm-12 col-md-6">
+			<div id="Chosen Opponenet"></div>
+		</div>
+	</div>
+</div>
 
+<button class="btn btn-lrg btn-danger" id="'restart-button" onclick="restart()">Restart Game</button>
 
 
 </body>
