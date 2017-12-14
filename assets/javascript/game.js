@@ -11,28 +11,31 @@
 
 
 var ewok = {
-    health = 85,
-    maxPower = 30,
+    health: 85,
+    maxPower: 30,
 
 };
 
 var jarjar = {
-    health = 60,
-    maxPower = 30,
+    health: 60,
+    maxPower: 30,
 
 };
 
 var chewyandporg = {
-    health = 115,
-    maxPower = 20,
+    health: 115,
+    maxPower: 20,
 
 };
 
 var reddit = {
-    health = 40,
-    maxPower = 45,
+    health: 40,
+    maxPower: 45,
 
 };
+
+player = {};
+opponent = {};
 
 //array of player objects  
 var playerList = [ewok, jarjar, chewyandporg, reddit];
@@ -51,12 +54,13 @@ function selectPlayer(){
 	var fightReddit = $('#fightreddit');
 
 	$('#chooseewok, #fightewok, #choosejarjar, #fightjarjar, #choosechewyandporg, #fightchewyandporg, #choosereddit, #fightreddit').click(function (){
-		if (this.id == 'chooseewok'){
-			pickedEwok.hide()
-			
-		}
+	if (this.id == 'chooseewok'){
+		pickedEwok.hide();
+		ewok = 
+		$('#chosen-player').append('#ewok');
 	}
-}
+});
+
 
 //attack function, connected to attack button, hidden until players are selected
 function attack() {
@@ -120,5 +124,3 @@ function restart(){
 }
 
 
-
-print objects in html
