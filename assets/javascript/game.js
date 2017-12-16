@@ -11,27 +11,30 @@
 
 
 var ewok = {
+	name: 'ewok',
     health: 85,
     maxPower: 30,
 
 };
 
 var jarjar = {
+	name: 'jarjar',
     health: 60,
     maxPower: 30,
 
 };
 
 var chewyandporg = {
+	name: 'chewyandporg',
     health: 115,
     maxPower: 20,
 
 };
 
 var reddit = {
+	name: 'reddit',
     health: 40,
     maxPower: 45,
-
 };
 
 player = {};
@@ -52,13 +55,27 @@ function selectPlayer(){
 	var fightChewyAndPorg = $('#fightchewyandporg');
 	var pickedReddit = $('#choosereddit');
 	var fightReddit = $('#fightreddit');
+}
 
-	$('#chooseewok, #fightewok, #choosejarjar, #fightjarjar, #choosechewyandporg, #fightchewyandporg, #choosereddit, #fightreddit').click(function (){
-	if (this.id == 'chooseewok'){
+
+$(document).on("click", '.choosePlayer', function(){
+//$('.choosePlayer').on("click", function(){
+	for (i = 0; i < playerList.length; i++){
+		
+		//$(this).attr('data-name', '')
+		if(playerList[i].name === $(this).attr('data-name')){
+			player = playerList[i]; 
+			var movePlayer = $(`#${player.name}`);
+			$('#chosen-player').append(movePlayer);
+			$('#health').html(player.health);
+		}
+	}
+	/**if (this.id == 'chooseewok'){
 		pickedEwok.hide();
 		ewok = 
 		$('#chosen-player').append('#ewok');
-	}
+	}**/
+
 });
 
 
@@ -121,6 +138,6 @@ function restart(){
 	printToScreen
 }
 
-}
+
 
 
