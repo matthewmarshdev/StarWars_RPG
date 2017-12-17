@@ -34,13 +34,15 @@
 		     <h1 class="text-center" style="font-family:'Bungee', cursive; color: gold; font-size: 30px; background-color: black;">Choose Your Character!</h1> 
 		</div>
 	</div>	
+	<br><br>
     <div class="row" id="playercards">
         <div class="col-lg-3 col-md-6">
             <div class="card" id="ewok" style="width: 15rem; height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
                 <img class="card-img-top" src="assets/images/ewok.jpg" alt="ewok">
                 <div class="card-block">
                     <h4 class="card-title">EWOK</h4>
-                    <p class="card-text">The fearsome EWOK.<span id="health" class="health">right here!!!!</span></p>
+                    <p class="card-text">The fearsome EWOK.</p>
+                    <p id="health" class="health"></p>
                     <a id="chooseewok" data-name="ewok" class="btn btn-primary choosePlayer" style="position: relative;">Choose Me</a>
                     <a id="fightewok" data-name="ewok" class="btn btn-danger chooseOpponent" style="position: relative;">Fight Me</a>
                 </div>
@@ -53,20 +55,22 @@
             	</div>
                 <div class="card-block align-bottom">
                     <h4 class="card-title">JAR JAR</h4>
-                    <p class="card-text">Super-Tough JAR JAR<span id="health" class="health">right here!!!!</span></p>
+                    <p class="card-text">Super-Tough JAR JAR</p>
+                    <p id="health" class="health"></p>
                     <a id="choosejarjar" data-name="jarjar" class="btn btn-primary choosePlayer align-bottom">Choose Me</a>
-                    <a id="fightjarjar" data-name="jarjar" class="btn btn-danger chooseOpponent align-bottom" >Fight Me</a>
+                    <a id="fightjarjar" data-name="jarjar" class="btn btn-danger  chooseOpponent align-bottom" >Fight Me</a>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
-            <div class="card" id="chewyandporg" style="width: 15rem;height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
-                <img class="card-img-top" src="assets/images/chewyandporg.jpg" alt="PORG AND CHEWY">
+            <div class="card" id="porg" style="width: 15rem;height: 15rem; background-color: black; font-family: 'Bungee', cursive; color: gold;">
+                <img class="card-img-top" src="assets/images/porg.jpg" alt="PORG">
                 <div class="card-block">
-                    <h4 class="card-title">PORG AND CHEWY</h4>
-                    <p class="card-text">PORG AND CHEWY TAG TEAM<span id="health" class="health">right here!!!!</span></p>
-                    <a id="choosechewyandporg" data-name="chewyandporg" class="btn btn-primary choosePlayer" style="position: relative;">Choose Me</a>
-                    <a id="fightchewyandporg" data-name="chewyandporg" class="btn btn-danger chooseOpponent" style="position: relative;">Fight Me</a>
+                    <h4 class="card-title">PORG</h4>
+                    <p class="card-text">PORG! Worthless.</p>
+                    <p id="health" class="health"></p>
+                    <a id="chooseporg" data-name="porg" class="btn btn-primary choosePlayer" style="position: relative;">Choose Me</a>
+                    <a id="fightporg" data-name="porg" class="btn btn-danger chooseOpponent" style="position: relative;">Fight Me</a>
                 </div>
             </div>
         </div>
@@ -75,32 +79,30 @@
                 <img class="card-img-top" src="assets/images/Reddit-PNG-Picture.png" alt="reddit">
                 <div class="card-block">
                     <h4 class="card-title">r/Gaming </h4>
-                    <p class="card-text">Troll Community of r/gaming<span id="health" class="health">right here!!!!</span></p>
+                    <p class="card-text">Troll Community of r/gaming</p>
+                    <span id="health" class="health"></span>
                     <a id="choosereddit" data-name="reddit" class="btn btn-primary choosePlayer" style="position: relative;">Choose Me</a>
-                    <a href="fightreddit" data-name="reddit" class="btn btn-danger chooseOpponent" style="position: relative;">Fight Me</a>
+                    <a id="fightreddit" data-name="reddit" class="btn btn-danger chooseOpponent" style="position: relative;">Fight Me</a>
                 </div>
             </div>
         </div>
     </div>
 
-	<br><br><br>
-	
-	<div class="row">
-		<div class="col-sm-3"></div>
-		<div class="col-sm-3">
-		    <button class="btn btn-lg btn-success center-block">Attack!</button>
-	    </div>
-	</div>
-
-
-	<div class="row" id="the-arena">
-		<div class="col-sm-12 col-md-6">
-			<div id="chosen-player"></div>
+	<br><br><br><br>
+		<div class="row" id="the-arena">
+			<div class="col-sm-12 col-md-5">
+				<h1 style="font-family: 'Bungee', cursive; color: blue; font-size: 30px;">Chosen Player</h1>
+				<div id="chosen-player"></div>
+			</div>
+			<div class="col-md-2">
+			    <button id="attackbtn" class="btn btn-lg btn-success center-block">Attack!</button>
+			    <p id="message"></p>
+		    </div>
+			<div class="col-sm-12 col-md-5">
+				<h1 style="font-family: 'Bungee', cursive; color: red; font-size: 30px;">Chosen Opponent</h1>
+				<div id="chosen-opponent"></div>
+			</div>
 		</div>
-		<div class="col-sm-12 col-md-6">
-			<div id="chosen-opponenet"></div>
-		</div>
-	</div>
 
 </div>
 
