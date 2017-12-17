@@ -78,6 +78,26 @@ $(document).on("click", '.choosePlayer', function(){
 
 });
 
+$(document).on("click", '.chooseOpponent', function(){
+//$('.choosePlayer').on("click", function(){
+	for (i = 0; i < playerList.length; i++){
+		
+		//$(this).attr('data-name', '')
+		if(playerList[i].name === $(this).attr('data-name')){
+			player = playerList[i]; 
+			var movePlayer = $(`#${player.name}`);
+			$('#chosen-opponent').append(movePlayer);
+			$('#health').html(player.health);
+		}
+	}
+	/**if (this.id == 'chooseewok'){
+		pickedEwok.hide();
+		ewok = 
+		$('#chosen-player').append('#ewok');
+	}**/
+
+});
+
 
 //attack function, connected to attack button, hidden until players are selected
 function attack() {
