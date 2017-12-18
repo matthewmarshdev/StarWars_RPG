@@ -5,15 +5,24 @@ html{
 
 body {
     background-image: url("../images/buffalohoth.jpg");
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     width: 100%;
 }
 
 h1{
 	text-align: center;
+	font-family:'Bungee', cursive; 
+    color: gold;
+    font-size: 30px;
+    background-color: black;
 }
+
 img{
 	max-width: 100px;
+}
+
+p{
+	text-align: center; font-family: 'Inconsolata', monospace; color: gold;
 }
 
 .thumbnail{
@@ -25,3 +34,22 @@ img{
 	align-content: center;
 	margin-top: 15px;
 }
+
+#message{
+	font-family: 'Bungee', cursive; 
+	color: red;
+	 font-size: 15px;"
+}
+
+#gameMessage2{
+	font-family: 'Bungee', cursive; color: red; font-size: 30px;"
+}
+
+.card{
+	width: 15rem;
+	height: 15rem;
+	 background-color: black; 
+	 font-family: 'Bungee', cursive;
+	  color: gold;
+}
+

@@ -37,29 +37,16 @@ var reddit = {
     maxPower: 45,
 };
 
-player = {};
-opponent = {};
+playerObj = {};
+opponentObj = {};
 
 var playerList = [ewok, jarjar, porg, reddit];
-
+var opponentList = [ewok, jarjar, porg, reddit];
 //this method needs work, will essentially set the player and opponent variables based on button
 //clicks i will use the .appendto $('.divC').appendTo('.divB'); to do so 
 
-function selectPlayer() {
-    var pickedEwok = $('#chooseewok');
-    var fightEwok = $('#fightewok');
-    var pickedJarJar = $('#choosejarjar');
-    var fightJarJar = $('#fightjarjar');
-    var pickedChewyAndPorg = $('#chooseporg');
-    var fightChewyAndPorg = $('#fightporg');
-    var pickedReddit = $('#choosereddit');
-    var fightReddit = $('#fightreddit');
-}
 
-var determineAttack = (maxPower) => {
-    return Math.floor(Math.random() * maxPower);
 
-}
 
 $(document).on("click", '.choosePlayer', function() {
     //$('.choosePlayer').on("click", function(){
@@ -73,64 +60,91 @@ $(document).on("click", '.choosePlayer', function() {
             $('#health').html(player.health);
         } 
     }
-
 });
 
 $(document).on("click", '.chooseOpponent', function() {
     //$('.choosePlayer').on("click", function(){
-    for (i = 0; i < playerList.length; i++) {
+    for (i = 0; i < opponentList.length; i++) {
 
         //$(this).attr('data-name', '')
-        if (playerList[i].name === $(this).attr('data-name')) {
-            player = playerList[i];
-            var movePlayer = $(`#${player.name}`);
-            $('#chosen-opponent').append(movePlayer);
-            $('#health').html(player.health);
+        if (opponentList[i].name === $(this).attr('data-name')) {
+            opponent = opponentList[i];
+            var moveOpponent = $(`#${opponent.name}`);
+            $('#chosen-opponent').append(moveOpponent);
+            $('#health').html(opponent.health);
 
         }
     }
 
 }); 
 
+	var determineAttack = (maxPower) => {
+    let playerMaxPower = Math.floor(Math.random() * player.maxPower);
+    console.log(playerMaxPower);
+    return playerMaxPower;
+    let opponentMaxPower = Math.floor(Math.random() * opponent.maxPower);
+    console.log(opponentMaxPower);
+    return opponentMaxPower;
+}  
 
 //attack function, connected to attack button, hidden until players are selected
-$(document).on("click", '#attackbtn', function(){
+$(document).on("click", '#attackbtn', function() {
 
-    var attackButton = $('#attackbtn');
-    var gameMessage = $('#message');
-    var restartButton = $('restart-button');
+	
+    var attackButton = $('#attackbtn').html();
+    var gameMessage = $('#message').text();
+    var gameMessage2 = $('#message2');
+    var gameMessage3 = $('#message3');
+    var gameMessage4 = $('#message4');
+    var restartButton = $('#restart-button');
+    
 
-
-    opponent.health -= player.maxPower;
-    console.log()
-
-    attackButton.disabled = true;
-    gameMessage = "opponents turn to strike"
+    opponent.health -= determineAttack() //player.maxPower;
+    var gameMessage = ('You hit the opponent for ' + player.maxPower + 'points');
+    var gameMessage2 = ('Your opponent has '+ opponent.health +' Hit points remaining');
+    var gameMessage3= ('Your Opponent hit you for ' + opponent.maxPower + 'points');
+    var gameMessage4 = ('You have '+ player.health +' Hit points remaining');
+    console.log(gameMessage);
+    console.log(gameMessage2);
+    console.log(gameMessage3);
+    console.log(gameMessage4);
 
 
     setTimeout(() => {
-        var opponentAttack = determineAttack(opponent.power);
+        var opponentAttack = determineAttack(opponent.maxPower);
         player.health -= opponentAttack;
-        attackButton.disabled = true;
+        
+        console.log(opponent.maxPower);
+      
+
     }, 1000);
+
 });
+
+
+
+
+
+
 
 //fuction determines what the attack will land for 
 
 
 //determines if the game is over or not
-function gameOver(health) {
-    if (player.health === 0 && opponent.health >= 0) {
+function gameOver() {
+    if (player.health === 0) {
         $('#winorlose').html.show('YOU DIED!');
         attackButton.hidden = true;
         restartButton.hidden = false;
-        return;
-    } else {
+        console.log("death");
+	} 
+
+	if (opponent.health === 0) {
         $('#winorlose').html.show('YOU WIN!');
         attackButton.hidden = true;
         restartButton.hidden = false;
-        return;
-    }
+        console.log("death");
+	}
     restart();
 }
 
@@ -146,6 +160,4 @@ function restart() {
     attackButton.hidden = false;
     $('#restart-button').hidden = true;
     $('#the-arena').empty();
-    $('#chosen-opponent').append(movePlayer);
- 
 }
